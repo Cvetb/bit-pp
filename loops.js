@@ -1,6 +1,6 @@
 var sum = 0;
-for (i = 1; i < 1000; i++){
-    if ( i % 3 === 0 && i % 5 === 0) {
+for (i = 1; i < 1000; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
         sum = sum + i;
     }
 }
@@ -8,17 +8,17 @@ console.log(sum);
 
 //----------------------------------------------------------------
 var result = "";
-var x = [ '1', 'A', 'B', "c", "r", true, NaN, undefined];
+var x = ['1', 'A', 'B', "c", "r", true, NaN, undefined];
 
 for (var i in x) {
 
-result +=  x[i];
+    result += x[i];
 }
 console.log(result);
 //------------------------
 var sum = 0;
 var x;
-for ( i = 1; i < 21; i++) {
+for (i = 1; i < 21; i++) {
     x = i * i;
     sum += x;
 }
@@ -26,12 +26,12 @@ console.log(sum);
 //-------------------------
 
 
-for (i = 1; i < 101; i++){
-    if (i % 3 === 0 && i % 5 === 0){
+for (i = 1; i < 101; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
         console.log("FizzBuzz");
-    } else if (i % 3 === 0){
+    } else if (i % 3 === 0) {
         console.log("Fizz");
-    } else if (i % 5 === 0){
+    } else if (i % 5 === 0) {
         console.log("Buzz");
     } else {
         console.log(i);
@@ -51,11 +51,11 @@ console.log("Done.");
 
 //-------------------------------------
 
-for(i = 0; i < 16; i++){
-    if(i % 2 === 0){
-        console.log(i+" is even number");
+for (i = 0; i < 16; i++) {
+    if (i % 2 === 0) {
+        console.log(i + " is even number");
     } else {
-        console.log(i+" is odd number");
+        console.log(i + " is odd number");
     }
 }
 
@@ -72,7 +72,7 @@ for(i=0; i < myArray.length; i++){
 console.log(sum);
 console.log(product);
 */
-for(i in myArray){
+for (i in myArray) {
     sum += myArray[i];
     product *= myArray[i];
 }
@@ -85,8 +85,8 @@ var a = [
     [8, 11, 9, 4],
     [7, 0, 7, 27]
 ];
-for(i in a){
-    for(j in a[i]){
+for (i in a) {
+    for (j in a[i]) {
         console.log(a[i][j]);
     }
 }
@@ -94,23 +94,23 @@ for(i in a){
 //---------------------------------------
 
 var David = [80, 60, 100];
-var sum= 0;
+var sum = 0;
 
-for (i in David){
+for (i in David) {
     sum = sum + David[i];
 }
 var average = sum / David.length;
 console.log(average);
 
-if (average < 60){
+if (average < 60) {
     console.log("F");
-} else if (average < 70){
+} else if (average < 70) {
     console.log("D");
-} else if (average < 80){
+} else if (average < 80) {
     console.log("C");
-} else if (average < 90){
+} else if (average < 90) {
     console.log("B");
-} else if (average < 100){
+} else if (average < 100) {
     console.log("A");
 }
 
@@ -120,8 +120,8 @@ var a = [6, 5, 7, 9, 11, 5, 10];
 var max = a[0];
 var i;
 
-for (i = 1; i < a.length; i++){
-    if(a[i] > max){
+for (i = 1; i < a.length; i++) {
+    if (a[i] > max) {
         max = a[i];
     }
 }
@@ -131,8 +131,8 @@ console.log(max);
 var min = a[0];
 var position = 0;
 
-for(i = 1; i < a.length; i++){
-    if(a[i] <= min){
+for (i = 1; i < a.length; i++) {
+    if (a[i] <= min) {
         min = a[i];
         position = i;
     }
@@ -142,10 +142,10 @@ console.log(min + " is on the position " + position);
 n = 4;
 s = "*";
 
-for(r = 0; r <= n-1; r++){
-    if(r == 0 || r == n-1){
+for (r = 0; r <= n - 1; r++) {
+    if (r == 0 || r == n - 1) {
         var line = "";
-        for (i = 0; i < n; i ++){
+        for (i = 0; i < n; i++) {
             line += s;
         }
         line = line + "\n"
@@ -153,7 +153,7 @@ for(r = 0; r <= n-1; r++){
     } else {
         var line = "";
         line = line + s;
-        for(i = 0; i < n-2; i++){
+        for (i = 0; i < n - 2; i++) {
             line = line + " ";
         }
         line = line + s;
@@ -162,3 +162,33 @@ for(r = 0; r <= n-1; r++){
     }
 }
 
+//-------------------------------zamena mesta min i max
+
+
+var a = [6, 5, 7, 9, 11, 8, 10];
+var max = a[0];
+var maxPosition = 0;
+var i;
+for (i = 1; i < a.length; i++) {
+    if (a[i] > max) {
+        max = a[i];
+        maxPosition = i;
+    }
+}
+console.log(max + " is on the position " + maxPosition);
+// ----------------------min
+var min = a[0];
+var minPosition = 0;
+
+for (i = 1; i < a.length; i++) {
+    if (a[i] <= min) {
+        min = a[i];
+        minPosition = i;
+    }
+}
+console.log(min + " is on the position " + minPosition);
+var temp;
+temp = a[maxPosition];
+a[maxPosition] = a[minPosition];
+a[minPosition] = temp;
+console.log(a);
