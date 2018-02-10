@@ -39,6 +39,19 @@ Write a function that draws a horizontal chart representing three given values. 
 * * * * *
 * * *
 * * * * * * *   */
+function stars2(arr) {
+    var result = "";
+    var sum = "";
+    var star = "*";
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr[i]; j++) {
+            sum += star;
+        }
+        sum += "\n";
+    }
+    return sum;
+}
+console.log(stars2([5, 3, 7]));
 
 
 /*task.7

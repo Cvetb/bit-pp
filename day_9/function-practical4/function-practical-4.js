@@ -4,7 +4,20 @@ Input:  e = 3, a = [5, -4.2, 3, 7]
 Output: yes
 Input:  e = 3, a = [5, -4.2, 18, 7]
 Output: no   */
+function check(e, arr) {
+    var result;
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] == e) {
+            result = "yes";
+        }
+        else {
+            result = "no";
+        }
+    }
+    return result;
+}
 
+console.log(check(5, [5, -4.2, 3, 7]))
 
 /* task.2
 Write a program that multiplies every positive element of a given array by 2.
@@ -23,7 +36,7 @@ function multiplyPositiveElements(array) {
 }
 console.log(multiplyPositiveElements([-3, 11, 5, 3.4, -8]));
 
-///drugi nacin
+//drugi nacin
 function multiplyPositiveElements(array) {
     var i = 0;
     var b = [];
@@ -48,19 +61,57 @@ function multiplyPositiveElements(array) {
 Write a program that finds the minimum of a given array and prints out its value and index. 
 Input array: [4, 2, 2, -1, 6]
 Output: -1, 3   */
+function minArray(arr) {
+    var min = arr[0];
+    
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
 
+    return min;
+}
+
+console.log(minArray([4, 2, 2, -1, 6]));
 
 /*task.4
 Write a program that finds the second largest number and prints out its value. 
 Input array: [4, 2, 2, -1, 6]
 Output: 2   */
+function secLargest (arr) {
+    var min = arr[0];
+    var sec = arr[0];
+    for (var i = 0; i < arr.length ; i++) {
 
+        if (arr[i]<arr[0]) {
+            min = arr[i];
+        }
+        for(var i = 0; i < arr.length ; i++){
+            
+            if(arr[i]<sec && arr[i]>min){
+            sec = arr[i];
+        }
+    }
+    return sec;
+}
+}
+console.log(secLargest ([4, 2, 2, -1, 6]));
 
 /*task.5
 Write a program that calculates the sum of positive elements in the array.
 Input array: [3, 11, -5, -3, 2]
 Output: 16   */
-
+function sumPositiveElements(array) {
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] > 0) {
+           sum = sum + array[i];
+        }
+    }
+    return sum;
+}
+console.log(sumPositiveElements([3, 11, -5, -3, 2]));
 
 /* task.6
 Write a program that checks if a given array is symmetric. An array is symmetric if it can be read the same way both from the left and the right hand side.   
@@ -68,19 +119,61 @@ Input array: [2, 4, -2, 7, -2, 4, 2]
 Output: The array is symmetric.
 Input array: [3, 4, 12, 8]
 Output: The array isn’t symmetric.  */
-
+function symmArr(arr){
+    var n = arr.length - 1;
+    for(i=0; i<arr.length; i++){
+        if(arr[0 + i] !== arr[n - i]){
+            return "The array isn’t symmetric.";
+            break;
+        }    
+    }
+    return "The array is symmetric";
+}
+console.log(symmArr([2, 4, -2, 7, -2, 4, 2]));
 
 /* task.7
 Write a program that intertwines two arrays. You can assume the arrays are of the same length. 
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 Output array: [4, 3, 5, 8, 6, 11, 2, 9]   */
-
+function fuse (a, b) {
+    var i;
+    var j;
+    var c = [];
+    var k = 0;
+    for (i = 0; i < a.length ; i++){
+       c[k] = a[i];
+       k++;
+      c[k] = b[i];
+  k++;
+}
+return c;
+}
+console.log(fuse ( [4, 5, 6, 2], [3, 8, 11, 9] ));
 
 /*task.8
 Write a program that concatenates two arrays. 
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 Output array: [4, 5, 6, 2, 3, 8, 11, 9]  */
+function concat(a, b) {
 
+    var i;
+    var j;
+    var k = 0;
+    var c = [];
+
+    for (i = 0; i < a.length; i++) {
+        c[k] = a[i];
+        k++;
+    }
+
+    for (j = 0; j < b.length; j++) {
+        c[k] = b[j];
+        k++;
+    }
+    return c;
+}
+
+console.log(concat([4, 5, 6, 2], [3, 8, 11, 9]));
 
 /*task.9
 Write a program that deletes a given element e from the array a. 

@@ -26,6 +26,15 @@ function arithmeticMean(a, b, c, d) {
     return arm;
 }
 console.log(arithmeticMean(5, 7, 9, 6));
+/*
+function arithmeticMean(arr) {
+    var sum = 0;
+    for (i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+console.log(arithmeticMean([5, 8, 6, 7, 9])); */
 
 /*task.5
 Write a function that draws a square of a given size. For example,  if the size of square is 5 the function should draw: 
@@ -39,14 +48,26 @@ Write a function that draws a horizontal chart representing three given values. 
 * * * * *
 * * *
 * * * * * * *   */
-
+function stars(arr) {
+    var result = "";
+    var sum = "";
+    var star = "*";
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr[i]; j++) {
+            sum += star;
+        }
+        sum += "\n";
+    }
+    return sum;
+}
+console.log(stars([5, 3, 7]));
 
 /*task.7
 Write a function that calculates a number of digits of a given number. */
 
 
 /*task.8
-Write a function that calculates a number of appearances of a given number in a given array. */ 
+Write a function that calculates a number of appearances of a given number in a given array. */
 
 /* task.9
 Write a function that calculates the sum of odd elements of a given array. */
@@ -64,7 +85,7 @@ var arr = [3, 5, 5, 6];
 console.log(sumOfOdd(arr));
 
 /*task.10
-Write a function that calculates the number of appearances of a letter a in a given string. Modify the function so it calculates the number of both letters a and A. */          
+Write a function that calculates the number of appearances of a letter a in a given string. Modify the function so it calculates the number of both letters a and A. */
 function countNumberOfLetter(text) {
 
     if (typeof text == "string") {

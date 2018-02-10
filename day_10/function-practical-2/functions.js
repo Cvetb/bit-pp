@@ -45,6 +45,15 @@ function concat(a, n) {
     console.log(sum)
 }
 concat("Ha", 5);
+/*function concate(string, n) {
+    var newString = "";
+    for (i = 0; i < n; i++) {
+        newString += string;
+    }
+    return newString;
+}
+console.log(concate("Ha", 5)); */
+
 /* task.4
 Write a function to count the number of letter occurrences in a string.
 "My random string", "n" -> 2 */
@@ -100,6 +109,21 @@ Write a function that replaces spaces in a string with provided separator. If se
     "My random string", "_" -> "My_random_string"
     "My random string", "+" -> "My+random+string"
     "My random string" -> "My-random-string" */
+    function replace(str, a){
+        var str1 = "";
+        for(var i = 0; i < str.length; i++){
+            if(str[i] === " "){
+                str1 = str1 + a;
+            } else  if (a == undefined){
+                str1 = str1 + "-";
+            } else {
+                str1 = str1 + a; 
+            }
+        }
+        return str1;
+    }
+    
+    console.log(replace("My random string"));
  
 /*task.10
 Write a function to get the first n characters and add “...” at the end of newly created string.*/
