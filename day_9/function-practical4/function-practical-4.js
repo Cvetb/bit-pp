@@ -54,6 +54,7 @@ function multiplyPositiveElements(array) {
             b[i] = array[i];
         }
     }
+    }
     return b;
     console.log(multiplyPositiveElements([-3, 11, 5, 3.4, -8]));
     

@@ -12,11 +12,32 @@ function maxNumber(a, b) {
 console.log(maxNumber(5, 9));
 /*task.2
 Write a function that checks if a given number is odd.*/
+function oddNum(a) {
+    var odd;
+    if (a % 2 != 0) {
+        odd = "Number is odd.";
+    } else {
+        odd = "Number is even.";
+    }
+    return odd;
 
+}
+console.log(oddNum(15));
 
 /*task.3
 Write a function that checks if a given number is a three digit long number.*/
+function threeDigitNum(a) {
+    var num;
+    if (a > 99 && a < 1000) {
+        num = "Three digit long number.";
 
+    } else {
+        num = "Not a three digit long number.";
+    }
+    return num;
+}
+
+console.log(threeDigitNum(852));
 /*task.4
 Write a function that calculates an arithmetic mean of four numbers.*/
 
@@ -34,6 +55,31 @@ Write a function that draws a square of a given size. For example,  if the size 
 *    *
 *    *
 *****   */
+function square(n) {
+    var n = 5;
+    var s = "*";
+
+    for (r = 0; r <= n - 1; r++) {
+        if (r == 0 || r == n - 1) {
+            var line = "";
+            for (i = 0; i < n; i++) {
+                line += s;
+            }
+            line = line + "\n"
+            console.log(line);
+        } else {
+            var line = "";
+            line = line + s;
+            for (i = 0; i < n - 2; i++) {
+                line = line + " ";
+            }
+            line = line + s;
+            line += "\n";
+            console.log(line);
+        }
+    }
+    }
+    console.log (square([5]));
 /* task.6
 Write a function that draws a horizontal chart representing three given values. For example, if values are 5, 3, and 7, the function should draw:
 * * * * *
@@ -60,7 +106,17 @@ Write a function that calculates a number of digits of a given number. */
 
 /*task.8
 Write a function that calculates a number of appearances of a given number in a given array. */ 
-
+function numOfAppear(a, array) {
+    var i;
+    var n = 0;
+    for (i = 0; i < array.length; i++) {
+        if (array[i] == a) {
+            n++;
+        }
+    }
+    return n;
+}
+console.log(numOfAppear(6, [2, 1, 6, 2, 5, 6, 1]));
 /* task.9
 Write a function that calculates the sum of odd elements of a given array. */
 function sumOfOdd(n) {
@@ -98,7 +154,15 @@ countNumberOfLetter("HELLOa jklAAAkujjgaa");
 
 /*task.11
 Write a function that concatenates a given string given number of times. For example, if “abc” and 4 are given values, the function prints out abcabcabcabc. */
-
+function concatenates(n) {
+    var a = "abc";
+    var line = "";
+    for (var i = 0; i < n; i++) {
+        line += a;
+    }
+    return line;
+}
+console.log(concatenates(3));
 
 //izdvojiti cifre i sabrati ih
 
