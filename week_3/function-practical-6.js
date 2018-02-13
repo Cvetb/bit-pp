@@ -1,3 +1,4 @@
+'use strict'
 /*Write a function to count vowels in a provided string. If you are  not aware of indexOf function, try to use switch statement.*/
 
 /* Write a function that combines two arrays by alternatingly taking elements.
@@ -143,8 +144,108 @@ For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
 * a     *
 * frame *
 *********  */ 
+
+
 /*Write a function to find the maximum element in array of numbers. Filter out all non-number elements.*/
+function maximum (a) {      //filter non-number
+    var b = [];
+    var i;
+    var j;
+for(i = 0, j =0; i < a.length; i++){
+    if(typeof a[i] == "number" && !isNaN (a[i])){
+        b[j]= a[i];
+         j++;
+    }
+}
+    var max = b[0];
+    var i;
+    for (i = 1; i < b.length; i++) {  
+        if (b[i] > max) {
+            max = b[i];
+            
+        }
+    }return max; 
+    }
+     console.log(maximum([5,6,NaN,"B",9,12,18,3,65,"sun",41]));
+
+
 /*Write a function to find the maximum and minimum elements. Function returns an array.*/ 
+function maxAndmin (a) {
+
+var max = a[0];
+
+var i;
+
+for (i = 1; i < a.length; i++) {
+    if (a[i] > max) {
+        max = a[i];
+        
+    }
+} 
+var min = a[0];
+for (i = 1; i < a.length; i++) {
+    if (a[i] <= min) {
+        min = a[i];
+    }
+}
+return  [max,min];
+}
+
+console.log(maxAndmin([2,3,4,5,6,9,7,8,1]));
+
 /*Write a function to find the element that occurs most frequently.*/
+function occCounter(arr) {
+
+    var counters = [];
+    var counter = 0;
+
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+                counter++;
+            }
+        }
+        counters[i] = counter;
+        counter = 0;
+
+    }
+    //console.log(counters);
+    for (var i = 0; i < counters.length; i++) {
+        for (var j = 0; j < counters.length; j++) {
+            if (counters[i] >= counters[j]) {
+
+                if (j == (counters.length - 1)) {
+                   // console.log(counters[i]);
+                    console.log("Most frequently occurs " + arr[i]);
+                    return 1;
+                }
+                
+
+            }
+
+        }
+    }
+
+}
+occCounter([1, 2, 4, 3, 4, 4, 5, 6, 5, 4, 3, 4]);
+
+
 /*Write a function to find the average of N elements. Make the function flexible to receive dynamic number or parameters.*/
+function average(arr) {
+    var sum = 0;
+    for (i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+console.log(average([5, 8, 6, 7, 9])); 
 /*Write a function to find all the numbers greater than the average.*/
+function greater(arr) {
+    var sum = 0;
+    for (i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+
+}
+console.log(greater([5, 8, 6, 7, 9])); 
