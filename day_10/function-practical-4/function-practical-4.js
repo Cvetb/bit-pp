@@ -1,3 +1,4 @@
+"use strict";
 /* task.1
 Write a program that checks if a given element e is in the array a. 
 Input:  e = 3, a = [5, -4.2, 3, 7]
@@ -6,7 +7,7 @@ Input:  e = 3, a = [5, -4.2, 18, 7]
 Output: no   */
 function check(e, arr) {
     var result;
-    for (i = 0; i < arr.length; i++) {
+    for ( var i = 0; i < arr.length; i++) {
         if (arr[i] == e) {
             result = "yes";
             break;
@@ -67,7 +68,7 @@ Output: -1, 3   */
 function minArray(arr) {
     var min = arr[0];
 
-    for (i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
         if (arr[i] < min) {
             min = arr[i];
         }
@@ -125,7 +126,7 @@ Input array: [3, 4, 12, 8]
 Output: The array isn’t symmetric.  */
 function symmArr(arr) {
     var n = arr.length - 1;
-    for (i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
         if (arr[0 + i] !== arr[n - i]) {
             return "The array isn’t symmetric.";
             break;
@@ -185,9 +186,9 @@ console.log(concat([4, 5, 6, 2], [3, 8, 11, 9]));
 Write a program that deletes a given element e from the array a. 
 Input: e = 2, a = [4, 6, 2, 8, 2, 2]
 Output array: [4, 6, 8]   */
-function destroyer(e, arr) {
+function destroyer( e,  arr) {
     var newArr = [];
-
+var arr=[];
     for (var i = 0; i < arr.length; i++) {
         } 
             return newArr;

@@ -1,3 +1,4 @@
+"use strict";
 /* task.1
 Write a function that calculates the maximum of two given numbers. */
 function maxNumber(a, b) {
@@ -74,10 +75,10 @@ function square(n) {
     var n = 5;
     var s = "*";
 
-    for (r = 0; r <= n - 1; r++) {
+    for (var r = 0; r <= n - 1; r++) {
         if (r == 0 || r == n - 1) {
             var line = "";
-            for (i = 0; i < n; i++) {
+            for (var i = 0; i < n; i++) {
                 line += s;
             }
             line = line + "\n"

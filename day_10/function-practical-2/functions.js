@@ -1,3 +1,4 @@
+"use strict";
 /*task.1
 Write a function to check whether the `input` is a string or not.
 "My random string" -> true
@@ -36,7 +37,7 @@ Write a function that concatenates a given string n times (default is 1).
 "Ha", 3 -> "HaHaHa" */
 function concat(a, n) {
     var newString = "";
-    for ( i = 0; i < n; i++ ) {
+    for ( var i = 0; i < n; i++ ) {
         newString += a;
     }
     return newString;
@@ -95,7 +96,7 @@ Write a function to convert string into an array. Space in a string should be re
 "Random" -> ["R", "a", "n", "d", "o", "m"]*/
 function stringToArr(a) {
     var arr = [];
-    for (i = 0; i < a.length; i++) {
+    for (var i = 0; i < a.length; i++) {
         if (a[i] == " ") arr[i] = null;
         else arr[i] = a[i];
     }
@@ -110,7 +111,7 @@ Note: A prime number (or a prime) is a natural number greater than 1 that has no
 function prime(a) {
     if (a == 2) return true;
     if (a % 2 == 0 && a > 2) return false;
-    for (i = 3; i < a.sqrt; i += 2) {
+    for (var i = 3; i < a.sqrt; i += 2) {
         if (a % i == 0) return false;
     }
     return true;
@@ -144,7 +145,7 @@ console.log(replace("My random string"));
 Write a function to get the first n characters and add “...” at the end of newly created string.*/
 function firstN(a, b) {
     var dots = "";
-    for (i = 0; i < b; i++) {
+    for (var i = 0; i < b; i++) {
         dots += a[i];
     }
     dots += "..."
@@ -159,7 +160,7 @@ console.log(firstN("String", 6));
 function filterNonNum(a) {
     var arr = [];
     var j = 0;
-    for (i = 0; i < a.length; i++) {
+    for (var i = 0; i < a.length; i++) {
         var check = a[i] * 1;
         console.log(check);
         if (isNaN(check) || !isFinite(check)) continue;
