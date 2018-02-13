@@ -132,7 +132,6 @@ var bmi = function (w, h) {
 }
 bmi(86,1.93);
 
-/*Write a function to find all the numbers greater than the average.*/
 
 /*Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
 
