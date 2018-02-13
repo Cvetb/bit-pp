@@ -186,30 +186,56 @@ console.log(concat([4, 5, 6, 2], [3, 8, 11, 9]));
 Write a program that deletes a given element e from the array a. 
 Input: e = 2, a = [4, 6, 2, 8, 2, 2]
 Output array: [4, 6, 8]   */
-function destroyer( e,  arr) {
+function destroyer(e, arr) {
     var newArr = [];
-var arr=[];
+    var counter = 0;
     for (var i = 0; i < arr.length; i++) {
-        } 
-            return newArr;
+        if (arr[i] != e) {
+            newArr[i] = arr[i];
+            counter++;
+        }
     }
+    var arrshort = [arr.length - (arr.length - counter)];
+    var j = 0;
+    for (i = 0; i < newArr.length; i++) {
+        if (newArr[i] || newArr[i] === 0) {
+            arrshort[j++] = newArr[i];
+        }
+    }
+    return arrshort;
+}
+var del = destroyer(2, [4, 6, 2, 8, 2, 2], );
+console.log(del);
 
-console.log(destroyer([4, 6, 2, 8, 2, 2]));
 
 /*task.10
 Write a program that inserts a given element e on the given position p in the array a. If the value of the position is greater than the array length, print the error message. 
 Input: e = 78, p = 3, a = [2, -2, 33, 12, 5, 8]
 Output: [2, -2, 33, 78, 12, 5, 8]   */
-
 function inserts(e, p, arr) {
     var newArr = [];
-    
-    for (var i = 0; i < arr.length; i++) {
-
-        return newArr;
-        break;
-        }
-        return ("Error!");
+    var i = 0;
+    var j = 0;
+    if (p > arr.length - 1) {
+        console.log("Error!")
+        return -1;
     }
-    
-console.log(inserts( 78, 3, [2, -2, 33, 12, 5, 8]));
+    while (i < p) {
+        newArr[i] = arr[i++];
+        j++;
+    }
+    if (i == p) {
+        newArr[j++] = e;
+
+    }
+    while (i >= p) {
+
+        newArr[j++] = arr[i++];
+        if (i == arr.length)
+            break;
+    }
+    return newArr;
+}
+var a = inserts(78, 3, [2, -2, 33, 12, 5, 8]);
+console.log(a);
+
