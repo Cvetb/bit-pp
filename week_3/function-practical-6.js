@@ -1,6 +1,16 @@
 'use strict'
 /*Write a function to count vowels in a provided string. If you are  not aware of indexOf function, try to use switch statement.*/
-
+function vowels(arr) {
+    var vowel = 'aeiouAEIOU';
+    var counter = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (vowel.indexOf(arr[i]) !== -1) {
+            counter++;
+        }
+    }
+    return counter;
+}
+console.log(vowels("enrique iglesias"));
 /* Write a function that combines two arrays by alternatingly taking elements.
 
 [‘a’,’b’,’c’], [1,2,3] -> [‘a’,1,’b’,2,’c’,3]  */
@@ -45,7 +55,7 @@ console.log(rotateElements([1, 2, 3, 4, 5, 6], 2));
 var numToDigits = function (n) {
     var arr = [];
     var str = n + '';
-    for (i = 0; i < str.length; i++) {
+    for (var i = 0; i < str.length; i++) {
         arr[i] = str[i];
     }
 
@@ -112,7 +122,7 @@ Overweight: greater than or equal to 25 but less than 30
 Obese: greater than or equal to 30 but less than 40
 Morbidly obese: greater than or equal to 40 */
 var bmi = function (w, h) {
-    result = w / (h * h);
+    var result = w / (h * h);
 
     if (result < 15) {
         console.log("Starvation");
@@ -144,7 +154,7 @@ For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
 * a     *
 * frame *
 *********  */ 
-
+ 
 
 /*Write a function to find the maximum element in array of numbers. Filter out all non-number elements.*/
 function maximum (a) {      //filter non-number
@@ -194,58 +204,61 @@ return  [max,min];
 console.log(maxAndmin([2,3,4,5,6,9,7,8,1]));
 
 /*Write a function to find the element that occurs most frequently.*/
-function occCounter(arr) {
 
-    var counters = [];
+function frequent(arr) {
+    var e = 1;
     var counter = 0;
-
+    var a;
     for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; j < arr.length; j++) {
+        for (var j = i; j < arr.length; j++) {
             if (arr[i] == arr[j]) {
                 counter++;
             }
-        }
-        counters[i] = counter;
-        counter = 0;
 
-    }
-    //console.log(counters);
-    for (var i = 0; i < counters.length; i++) {
-        for (var j = 0; j < counters.length; j++) {
-            if (counters[i] >= counters[j]) {
-
-                if (j == (counters.length - 1)) {
-                   // console.log(counters[i]);
-                    console.log("Most frequently occurs " + arr[i]);
-                    return 1;
-                }
-                
-
+            if (e < counter) {
+                e = counter;
+                a = arr[i];
             }
-
         }
+
+        counter = 0;
     }
+    return a + " occurs " + e + " times";
 
 }
-occCounter([1, 2, 4, 3, 4, 4, 5, 6, 5, 4, 3, 4]);
+console.log(frequent([1, 2, 3, 4, 5, 6, 2, 3, 4, 5, 3, 2]));
 
 
 /*Write a function to find the average of N elements. Make the function flexible to receive dynamic number or parameters.*/
 function average(arr) {
     var sum = 0;
-    for (i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
         sum += arr[i];
     }
     return sum / arr.length;
 }
 console.log(average([5, 8, 6, 7, 9])); 
 /*Write a function to find all the numbers greater than the average.*/
+
+
 function greater(arr) {
+    var newArr = [];
+    var counter = 0;
+    var n = arr.length;
     var sum = 0;
-    for (i = 0; i < arr.length; i++) {
+    var average;
+    for (var i = 0; i < n; i++) {
         sum += arr[i];
     }
-    return sum / arr.length;
+    average = sum / n;
+
+    for (var i = 0; i < n; i++) {
+        if (arr[i] > average) {
+            newArr[counter] = arr[i];
+            counter++;
+        }
+    }
+    return newArr;
 
 }
-console.log(greater([5, 8, 6, 7, 9])); 
+console.log(greater([1, 8,2, 3, 4, 5.2,5.5, 6]));

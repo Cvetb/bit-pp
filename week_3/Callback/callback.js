@@ -119,9 +119,9 @@ console.log((
             } else {
                 b += a[i];
             }
-            for (var j = 0; j < b.length; j++){
+           /* for (var j = 0; j < b.length; j++){
                 if(b[j] == "*"){
-                star ++;
+                star ++;*/
                 }
             }
         }
