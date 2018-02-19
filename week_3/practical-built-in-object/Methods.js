@@ -70,6 +70,7 @@ function capitalize(str) {
 }
 
 console.log(capitalize('hello world'));
+
 /* task 9. Write a function to hide email addresses to protect them from unauthorized users.*/
 function protect(user_email) {
   var x, spl, one, two;
