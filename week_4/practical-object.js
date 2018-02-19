@@ -1,3 +1,4 @@
+'use strict'
 // Write a functional expression that duplicates each element of a given array.
 
 var duplicate = function (arr) {
@@ -219,7 +220,3 @@ function validator() {
 }
 
 console.log(validator());
-
-
-var k = {p:1};
-console.log (k = new String({p:1}));
