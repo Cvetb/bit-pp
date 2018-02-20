@@ -220,3 +220,23 @@ function validator() {
 }
 
 console.log(validator());
+
+/*Write a function that calculates a number of days to your birthday.
+    Input: 25 February 
+    Output: 5 days */
+
+
+    function daysUntil(x) {
+
+
+        var today = Date.parse(new Date());  // var today = new Date()
+        var birthday = Date.parse(x); // var birthday = new Date(x);
+
+        //var diff = today.getTime() - birthday.getTime();
+        var res = (birthday - today) / 1000 / 60 / 60 / 24;
+
+        return Math.round(res);
+
+    }
+
+    console.log(daysUntil("31 Mar 2018"));
