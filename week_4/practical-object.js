@@ -3,7 +3,7 @@
 
 var duplicate = function (arr) {
     var newArr = [];
-    for (var i = 0, j = 0; i < arr.length; i++ , j += 2) {
+    for (var i = 0, j = 0; i < arr.length; i++, j += 2) {
         newArr[j] = arr[i];
         newArr[j + 1] = newArr[j];
     }
@@ -28,7 +28,9 @@ var cut = function (arr) {
             newArr[j] = arr[i];
         }
     }
-    return newArr.sort(function (a, b) { return a - b; });
+    return newArr.sort(function (a, b) {
+        return a - b;
+    });
 }
 
 console.log(cut([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
@@ -73,10 +75,19 @@ function min(arr) {
             break;
         }
     }
-    return { min: minimum, index: i };
+    return {
+        min: minimum,
+        index: i
+    };
 
 }
 console.log(min([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
+/* var position = arr.lastIndexOf(minimum);
+    return {
+        value: minimum,
+        index: position
+    }
+}  */
 
 // Write a function that finds all the elements in a given array less than a given element. 
 
@@ -115,9 +126,19 @@ function filter(arr, filterFunc) {
 console.log(filter(["prOblem", "PROfessor", "pRoactive", "parabolic", "perfect"], startsWith));
 //Write a list (array) of products you usually buy in the supermarket. Write a price and name for each product.
 
-var shoppingList = [{ name: "kravica", price: 89.865 }, { name: "rouch", price: 90 }, { name: "dove", price: 70 }];
+var shoppingList = [{
+    name: "kravica",
+    price: 89.865
+}, {
+    name: "rouch",
+    price: 90
+}, {
+    name: "dove",
+    price: 70
+}];
 
 var sum = 0;
+
 function totalPrice(arr) {
     for (var i = 0; i < arr.length; i++) {
         sum += arr[i].price;
@@ -131,6 +152,7 @@ function avgPrice(arr) {
     var sum = totalPrice(arr);
     return (sum / arr.length).toFixed(3);
 }
+
 function highestPrice(arr) {
     var max = arr[0].price;
     var name;
@@ -226,17 +248,67 @@ console.log(validator());
     Output: 5 days */
 
 
-    function daysUntil(x) {
+function daysUntil(x) {
 
 
-        var today = Date.parse(new Date());  // var today = new Date()
-        var birthday = Date.parse(x); // var birthday = new Date(x);
+    var today = Date.parse(new Date()); // var today = new Date()
+    var birthday = Date.parse(x); // var birthday = new Date(x);
 
-        //var diff = today.getTime() - birthday.getTime();
-        var res = (birthday - today) / 1000 / 60 / 60 / 24;
+    //var diff = today.getTime() - birthday.getTime();
+    var res = (birthday - today) / 1000 / 60 / 60 / 24;
 
-        return Math.round(res);
+    return Math.round(res);
 
+}
+
+console.log(daysUntil("31 Mar 2018"));
+/* Write a function that for a given departure and arrival time calculates the time the trip takes. */
+
+function tripTime(start, end) {
+    start = start.split(':');
+    end = end.split(':')
+    var dep = new Date();
+    dep.setHours(start[0], start[1], start[2])
+    var arr = new Date();
+    arr.setHours(end[0], end[1], end[2]);
+    var int = arr - dep;
+    var h, m, s;
+    h = Math.floor(int / 1000 / 60 / 60);
+    m = Math.floor((int - h * 3600000) / 1000 / 60);
+    s = Math.floor((int - h * 3600000 - m * 60000) / 1000);
+    return h + ' hours ' + m + ' minutes ' + s + ' seconds';
+}
+
+console.log(tripTime('8:22:13', '11:43:22'));
+/*Write a constructor function that creates points in the space. Each point in the space has its own x, y, and z coordinate. For example, (3, 5, 1) can the point in the space. */
+function Point(x, y, z) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+}
+
+/*Write a function that calculates the distance between two points in the space. */
+function distance(p1, p2) {
+    var distance;
+    distance = Math.sqrt(Math.pow((p1.x-p2.x), 2) + Math.pow((p1.y-p2.y), 2) + Math.pow((p1.z-p2.z), 2));
+    return distance;
+}
+console.log(distance(new Point(3,5,1), new Point(4,6,1)));
+/*Write a function that generates a random integer value between 5 and 20. */
+function random5to10() {
+    return 5*Math.random() +5;
+}
+/* Write a function that generates a random integer value between 50 and 100.*/
+function random50to100() {
+    return 50*Math.random() +50;
+}
+/* Write a function which expects a number and a callback factory function and returns an array of numbers produced by the factory function.*/
+function factory(n, callback) {
+    var res = [];
+    for (var i = 0; i < n; i++) {
+       res.push(parseInt(callback()));
     }
+    return res;
+}
 
-    console.log(daysUntil("31 Mar 2018"));
+console.log(factory(5, random50to100));
