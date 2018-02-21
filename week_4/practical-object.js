@@ -146,7 +146,7 @@ function totalPrice(arr) {
     return sum;
 
 }
-// console.log(totalPrice(shoppingList));
+ console.log(totalPrice(shoppingList));
 
 function avgPrice(arr) {
     var sum = totalPrice(arr);
