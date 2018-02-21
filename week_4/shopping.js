@@ -35,13 +35,9 @@
         this.list = [];
 
         this.addProduct = function (p) {
-            var today = new Date().getTime();
-            var validExpDate = this.expirationDate.getTime();
-
-            if (validExpDate >= today) {
-                this.list.push(p);
-            }
-
+            var d = expirationDate.split('-');
+            this.expirationDate = new Date(d[2], d[1] - 1, d[0]);
+            if  (product.expirationDate-new Date()>0) this.list.push(product);
         }
 
         this.totalPrice = function () {
@@ -83,9 +79,7 @@
 
 
     }
-
     var payment = new PaymentCard();
-
 
     function checkoutAndBuy() {
         if (this.accountBalance >= this.totalPrice) {
