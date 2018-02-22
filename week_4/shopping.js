@@ -2,6 +2,7 @@
 (function () {
 
     console.log('Hi! We can do it!');
+
     function Product(name, price, expirationDate) {
         this.id = (function () {
             var productId;
@@ -14,30 +15,28 @@
         this.price = price;
         this.expirationDate = expirationDate;
 
-
         this.getInfo = function () {
-
-            var b;
-            b = this.name.split("");
 
             return (name.charAt(0).toUpperCase() + this.productId + name.charAt(name.length - 1).toUpperCase());
         }
     }
 
     var coffeeExpirationDate = new Date(2018, 7, 13);
-
+    var juiceExpirationDate = new Date(2018, 1, 15);
     var coffee = new Product("Grand kafa", 102.45, new Date(2018, 7, 13));
     var chocolate = new Product("Najlepse zelje", 120.55, new Date(2018, 2, 5));
-    console.log(coffee);
+    var juice = new Product("Nektar", 95.84, new Date(2018, 1, 15));
+    console.log(juice);
 
     function ShoppingBag() {
 
         this.list = [];
 
-        this.addProduct = function (p) {
+        this.addProduct = function (product, expirationDate) {
+
             var d = expirationDate.split('-');
-            this.expirationDate = new Date(d[2], d[1] - 1, d[0]);
-            if  (product.expirationDate-new Date()>0) this.list.push(product);
+            expirationDate = new Date(d[2], d[1] - 1, d[0]);
+            if (expirationDate - new Date() > 0) this.list.push(product);
         }
 
         this.totalPrice = function () {
@@ -49,42 +48,39 @@
         }
 
         this.avgPrice = function () {
-            var sum = totalPrice(this.list);
+            var sum = this.totalPrice(this.list);
             return (sum / this.list.length).toFixed(3);
         }
 
         this.mostExpensive = function () {
             var max = this.list[0].price;
-
+            var maxProduct = this.list[0].productId
             for (var i = 0; i < this.list.length; i++) {
                 if (this.list[i].price > max) {
                     max = this.list[i].price;
-                    this.productId = this.list[i].this.productId.toUpperCase();
+                    maxProduct = this.list[i].productId.toUpperCase();
                 }
             }
-            return this.productId;
+            return maxProduct;
         }
-
-
     }
     var jsList = new ShoppingBag();
     jsList.addProduct(coffee);
     jsList.addProduct(chocolate);
 
-    function PaymentCard() {
+    function PaymentCard(status, valid, accountBalance) {
 
         this.accountBalance = accountBalance.toFixed(2);
-        this.status = status;
+        this.status = true;
         this.valid = valid;
-
-
     }
-    var payment = new PaymentCard();
+    var payment = new PaymentCard(true, new Date(2018, 7, 13), 5000);
 
-    function checkoutAndBuy() {
-        if (this.accountBalance >= this.totalPrice) {
+    function checkoutAndBuy(paymentCard, shoppingBag) {
+        if (paymentCard.accountBalance >= shoppingBag.totalPrice()) {
             return console.log("purchase is successful");
         } return console.log("there is not enough money");
     }
-
+    var missing = 
+   
 })();
