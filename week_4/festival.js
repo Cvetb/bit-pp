@@ -36,7 +36,7 @@
             });
             (movie);
             if (this.totalLength() + movie.length <= 480 && counter < 4) {
-                this.listofMovies.push(movie);
+                this.listOfMovies.push(movie);
                 this.movieCount++;
             } else if (this.totalLength() + movie.length > 480) {
                 console.log('Too long!');
