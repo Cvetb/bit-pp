@@ -26,7 +26,7 @@
         this.seat = seat;
 
         this.getData = function () {
-            return this.seat.getData() + ', ' + this.person.getData();
+            return this.seat.getData().toUpperCase() + ', ' + this.person.getData();
         }
     }
 
@@ -35,7 +35,7 @@
         this.date = new Date(date);
         this.list = [];
         this.returnDate = function () {
-            return this.date.getDate() + '. ' + this.date.getMonth() + '. ' + this.date.getFullYear();
+            return this.date.getDate() + '. ' + this.date.getMonth() + '. ' + this.date.getFullYear()+ ', ';
         }
 
         this.getData = function () {
@@ -70,7 +70,7 @@
                 counter += flight.list.length;
                 air += '\n\t' + flight.getData();
             }
-            return 'Airport: ' + this.name + ', ' + 'total passenger: ' + counter + ' ' + air;
+            return 'Airport: ' + this.name + ', ' + 'total passengers: ' + counter + ' ' + air;
         };
 
     }
