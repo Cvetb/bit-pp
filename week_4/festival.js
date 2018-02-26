@@ -83,8 +83,8 @@ var movie5 = new Movie('Deadpool',108, comedy);
     function createProgram(date) {
         return new Program(date);
     }
-    var program1 = new Program('25.10.2017');
-    var program2 = createProgram('28.10.2017');
+    var program1 = new Program('2017 10 25');
+    var program2 = createProgram('2017 10 26');
 
     var fest1 = new Festival('Weekend festival');
 
