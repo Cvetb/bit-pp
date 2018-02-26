@@ -73,8 +73,8 @@
     jsList.addProduct(coffee);
     jsList.addProduct(chocolate);
 
-    var payment = new PaymentCard(true, new Date(2018, 7, 13), 1100);
-    console.log(checkoutAndBuy(jsList, payment));
+    var payment = new PaymentCard(true, new Date(2018, 7, 13), 110);
+    return checkoutAndBuy(jsList, payment);
 
 })();
 function checkoutAndBuy(jsList, payment) {
@@ -82,5 +82,7 @@ function checkoutAndBuy(jsList, payment) {
     if (payment.accountBalance >= jsList.totalPrice()) {
         return console.log("purchase is successful");
     }
-    return console.log("there is not enough money");
+    else {
+        return console.log('You need ' +(jsList.totalPrice()-payment.accountBalance) + ' din');
+}
 };
