@@ -1,3 +1,4 @@
+'use strict';
 function WebApp(name, url, technologies, licence, stars) {
     this.name = name;
     this.url = url;
@@ -43,19 +44,19 @@ var sharedMethods = {
 
     },
     like: function () {
-        this.stars++;
+        return this.stars++;
     },
 
     showStars: function () {
         console.log(this.stars);
     }
-}
+};
 
 var w1 = new WebApp ('Facebook','link','React','CC',5);
 w1.getData();
 w1.reactBased();
 
-var m1 = new MobileApp ('Whatsapp','Android','CC', 4)
+var m1 = new MobileApp ('Whatsapp','Android','CC', 5);
 m1.getData();
 m1.forAndroid();
 
@@ -64,3 +65,4 @@ MobileApp.prototype.__proto__ = sharedMethods;
 
 w1.showStars();
 m1.isCCLicence();
+
