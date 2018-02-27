@@ -34,6 +34,14 @@ MobileApp.prototype.forAndroid = function () {
     }
     return false;
 }
+var w1 = new WebApp('Facebook','link','React','CC',5);
+w1.getData();
+w1.reactBased();
+
+var m1 = new MobileApp('Whatsapp','Android','CC', 4)
+m1.getData();
+m1.forAndroid();
+
 var sharedMethods = {
 
     isCCLicence: function () {
@@ -52,13 +60,13 @@ var sharedMethods = {
     }
 };
 
-var w1 = new WebApp ('Facebook','link','React','CC',5);
-w1.getData();
-w1.reactBased();
 
+<<<<<<< HEAD
 var m1 = new MobileApp ('Whatsapp','Android','CC', 5);
 m1.getData();
 m1.forAndroid();
+=======
+>>>>>>> bc374b784ffb7f0cacd4de85643c4d2a47fa554a
 
 WebApp.prototype.__proto__ = sharedMethods;
 MobileApp.prototype.__proto__ = sharedMethods;
