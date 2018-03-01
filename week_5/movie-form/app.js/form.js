@@ -1,4 +1,3 @@
-
 var allMovies = [];
 document.querySelector('#create-movie').addEventListener('click', createMovie);
 
@@ -51,20 +50,30 @@ function createMovie() {
     var listOfM = document.querySelector("#movie-list");
     listOfM.appendChild(listItem);
 
-    var allMoviesLength = 0;
-    for (var i = 0; i < allMovies.length; i++) {
-        allMoviesLength = parseInt(allMoviesLength) + parseInt(allMovies[i].length);
-    }
 
-    document.querySelector('#allmoviel').innerHTML = "<span>" + allMoviesLength + "</span>";
 
 }
-function createProgram (){
-    this.date = new Date();
-    document.querySelector('#date')
+
+document.querySelector("#create-program").addEventListener('click', createProgram);
+
+function createProgram() {
+    var dateProgram = document.querySelector("#date").value;
+
+    var program1 = new Program(dateProgram);
+
+    var liItem1 = document.createElement('li');
+    var liTxt1 = document.createTextNode(program1.getData());
+    liItem1.appendChild(liTxt1);
+    var listOfP = document.querySelector("#program-list");
+    listOfP.appendChild(liItem1);
+
+
+    var optItem1 = document.createElement('option');
+    var optTxt1 = document.createTextNode(program1.getData());
+    optItem1.appendChild(optTxt1);
+    var dateProgram = document.createTextNode(optTxt1);
+    var listOfP1 = document.querySelector("#fin-program");
+    optItem1.value = allMovies.length - 1;
+    listOfP1.appendChild(optItem1);
+    
 }
-
-
-
-
-
