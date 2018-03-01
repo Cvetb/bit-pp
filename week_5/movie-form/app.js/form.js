@@ -53,6 +53,7 @@ function createMovie() {
 
 
 }
+var allPrograms = [];
 
 document.querySelector("#create-program").addEventListener('click', createProgram);
 
@@ -60,6 +61,7 @@ function createProgram() {
     var dateProgram = document.querySelector("#date").value;
 
     var program1 = new Program(dateProgram);
+    allPrograms.push(program1);
 
     var liItem1 = document.createElement('li');
     var liTxt1 = document.createTextNode(program1.getData());

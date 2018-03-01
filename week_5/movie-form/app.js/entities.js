@@ -15,8 +15,8 @@ function Movie(movieTitle, movieLength, movieGenre) {
     };
 }
 
-function Program() {
-    this.date = new Date(date);
+function Program(date) {
+    this.date = new Date();
     this.movies = [];
 
 }
@@ -27,7 +27,7 @@ Program.prototype.getData = function () {
 
     for (var i = 0; i < allMovies.length; i++) {
 
-        totalNumOfMovies += parseInt(allMovies[i].length);
+        totalNumOfMovies = parseInt(totalNumOfMovies) + parseInt(allMovies[i].length);
     }
 
     return d + " , " + numOfMovies + " movies, " + " duration: " + totalNumOfMovies + " min";
