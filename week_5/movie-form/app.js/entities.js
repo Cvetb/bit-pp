@@ -20,16 +20,18 @@ function Program(date) {
     this.movies = [];
 
 }
+
 Program.prototype.getData = function () {
-    var totalLengthMovies = 0;
+    
     var numOfMovies = allMovies.length;
 
+    var allMoviesLength = 0;
     for (var i = 0; i < allMovies.length; i++) {
-
-        totalLengthMovies +=  allMovies[i].length;
-        var totaLL = document.querySelector('#allmoviel');
-        totaLL.textContent =  totalLengthMovies;
+        allMoviesLength += parseInt(allMovies[i].movieLength);
+        var totaLL = document.querySelector('#all-movie-length');
+        totaLL.textContent = allMoviesLength;
     }
+   
 
-    return this.date + " , " + numOfMovies + " movies, " + " duration: " + totalLengthMovies + " min";
+    return this.date + " , " + numOfMovies + " movies, " + " duration: " +  allMoviesLength + " min";
 }

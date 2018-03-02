@@ -26,15 +26,15 @@
 
                 <label>Length(min)</label>
 
-                <input type="number" name="movie-lenght" class="form-control" id="length" required="required">
+                <input type="number" name="movie-length" class="form-control" id="length" required="required">
                 <br>
-                <div class="form-control">
-                    <select class="genre-select">
+                <div >
+                    <select class="form-control" id="genre-select">
                         <option value="-">-</option>
                         <option value="drama">Drama</option>
                         <option value="action">Action</option>
                         <option value="horror">Horror</option>
-                        <option value="commedy">Commedy</option>
+                        <option value="comedy">Comedy</option>
                         <option value="adventure">Adventure</option>
                     </select>
                 </div>
@@ -47,7 +47,7 @@
         </form>
 
         <div>
-            <p >All movies length: <span id='allmoviel'></span></p>
+            <p >All movies length: <span id='all-movie-length'></span></p>
 
         </div>
 
@@ -61,7 +61,7 @@
                 <div class="form-group">
                     <label for="date">Date</label>
 
-                    <input type="text" name="movie-date" class="form-control" id="date" required="required">
+                    <input type="date" name="movie-date" class="form-control" id="date" required="required">
                 </div>
 
                 <button type="button" class="btn btn-warning btn-block" id="create-program">Create program</button>
@@ -69,7 +69,7 @@
                 <div class="form-group">
                     <label for="program-list">Movie</label>
 
-                    <select class="form-control">
+                    <select class="form-control" id ='movie-select'>
                         <option></option>
                     </select>
                     <ul id="program-list">

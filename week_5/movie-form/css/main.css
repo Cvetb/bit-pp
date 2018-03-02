@@ -1,5 +1,5 @@
 body {
-    margin: 2% 6% 6% 6%;
+    margin: 2% 10% 6% 10%;
     font-size: 1em;
     background-color: palegoldenrod;
 }
@@ -40,7 +40,7 @@ select {
     padding: 10px;
 }
 
-#allmoviel {
+#all-movie-length {
     padding: 10px;
     text-align: right;
 
@@ -53,6 +53,3 @@ select {
     margin: 1%;
 }
 
-.btn {
-    margin: 1%;
-}

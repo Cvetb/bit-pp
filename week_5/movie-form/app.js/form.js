@@ -5,7 +5,7 @@ function createMovie() {
     var movieTitleInput = document.querySelector('#title').value;
     var movieTitle = movieTitleInput.value;
     var movieLength = document.querySelector('#length').value;
-    var movieGenreSelect = document.querySelector('.genre-select');
+    var movieGenreSelect = document.querySelector('#genre-select');
     var movieGenreIndex = movieGenreSelect.selectedIndex;
     var movieGenre = movieGenreSelect.options[movieGenreIndex].value;
 
@@ -50,6 +50,12 @@ function createMovie() {
     listItem.appendChild(liText);
     var listOfM = document.querySelector("#movie-list");
     listOfM.appendChild(listItem);
+    var movieOption = document.createElement('option');
+    var movieOptionContent = document.createTextNode(movie.getInfo());
+    movieOption.appendChild(movieOptionContent);
+    var optOfMovies= document.querySelector("#movie-select");
+    optOfMovies.appendChild(movieOption);
+
 
 
 
