@@ -18,9 +18,9 @@
         <h5>Please fill the form</h5>
 
         <h3>Movie</h3>
-        
-            <form action="" method="POST">
-                <div class="form-group">
+
+        <form action="" method="POST">
+            <div class="form-group">
                 <label>Title </label>
                 <input type="text" name="movie-title" class="form-control" id="title" required="required">
 
@@ -28,27 +28,29 @@
 
                 <input type="number" name="movie-lenght" class="form-control" id="length" required="required">
                 <br>
-                <select class="form-control" class="genre-select">
-                    <option value="-">-</option>
-                    <option value="drama">Drama</option>
-                    <option value="action">Action</option>
-                    <option value="horror">Horror</option>
-                    <option value="commedy">Commedy</option>
-                    <option value="adventure">Adventure</option>
-                </select>
+                <div class="form-control">
+                    <select class="genre-select">
+                        <option value="-">-</option>
+                        <option value="drama">Drama</option>
+                        <option value="action">Action</option>
+                        <option value="horror">Horror</option>
+                        <option value="commedy">Commedy</option>
+                        <option value="adventure">Adventure</option>
+                    </select>
+                </div>
             </div>
-                <br>
-                <div id="error"></div>
-                <button type="button" class="btn btn-dark btn-block" id="create-movie">Create movie</button>
+            <br>
+            <div id="error"></div>
+            <button type="button" class="btn btn-dark btn-block" value="create-movie" id="create-movie">Create movie</button>
 
 
-            </form>
-        
+        </form>
+
         <div>
-            <p id='allmoviel'>All movies length: </p>
+            <p >All movies length: <span id='allmoviel'></span></p>
 
         </div>
-        
+
         <ul id="movie-list">
         </ul>
 

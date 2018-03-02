@@ -44,6 +44,7 @@ function createMovie() {
     var movie = new Movie(movieTitleInput, movieLength, movieGenre);
     allMovies.push(movie);
 
+
     var listItem = document.createElement('li');
     var liText = document.createTextNode(movie.getInfo());
     listItem.appendChild(liText);
@@ -58,9 +59,10 @@ var allPrograms = [];
 document.querySelector("#create-program").addEventListener('click', createProgram);
 
 function createProgram() {
-    var dateProgram = document.querySelector("#date").value;
+    var dateProgram = document.querySelector("#date");
+    var date = dateProgram.value;
 
-    var program1 = new Program(dateProgram);
+    var program1 = new Program(date);
     allPrograms.push(program1);
 
     var liItem1 = document.createElement('li');

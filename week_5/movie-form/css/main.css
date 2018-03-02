@@ -43,10 +43,16 @@ select {
 #allmoviel {
     padding: 10px;
     text-align: right;
+
 }
 
-/*#error {
+#error {
     color: red;
     font-size: 0.8em;
     text-align: center;
-}*/
+    margin: 1%;
+}
+
+.btn {
+    margin: 1%;
+}
