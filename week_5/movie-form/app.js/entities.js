@@ -13,6 +13,8 @@ function Movie(movieTitle, movieLength, movieGenre) {
      this.getInfo = function () {
          return this.movieTitle + ', ' + this.movieLength + 'min, ' + this.genreAbb();
      };
+
+     
 }
 
 function Program(date) {
@@ -22,8 +24,8 @@ function Program(date) {
 }
 
 Program.prototype.getData = function () {
-    var numOfMovies = allMovies.length;
-    return this.date +', '+ numOfMovies+ 'movies'  + ', TBA';
+    //var numOfMovies = allPrograms.length;
+    return this.date + ', TBA';
        
 }
 /*var numOfMovies = allMovies.length;

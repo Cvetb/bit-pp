@@ -62,9 +62,15 @@ function createMovie() {
     var optOfMovies = document.querySelector("#movie-select");
     optOfMovies.appendChild(movieOption);
 
+    var allMoviesLength = 0;
+    for (var i = 0; i < allMovies.length; i++) {
+        allMoviesLength += parseInt(allMovies[i].movieLength);
+        var totaLL = document.querySelector('#all-movie-length');
+        totaLL.textContent = allMoviesLength;
+        document.querySelector('#all-movie-length').innerHTML = allMoviesLength + " min";
 
 
-
+    }
 }
 var allPrograms = [];
 
@@ -76,7 +82,7 @@ function createProgram() {
 
     var program1 = new Program(date);
     allPrograms.push(program1);
-
+    var dateProgram = document.querySelector("#date").value = "";
     var liItem1 = document.createElement('li');
     var liTxt1 = document.createTextNode(program1.getData());
     liItem1.appendChild(liTxt1);
@@ -87,9 +93,36 @@ function createProgram() {
     var optItem1 = document.createElement('option');
     var optTxt1 = document.createTextNode(program1.getData());
     optItem1.appendChild(optTxt1);
-    var dateProgram = document.createTextNode(optTxt1);
     var listOfP1 = document.querySelector("#fin-program");
-    optItem1.value = allMovies.length - 1;
     listOfP1.appendChild(optItem1);
+
+}
+document.querySelector("#addmovietop").addEventListener('click', addMovie);
+
+
+function addMovie() {
+
+    var sm = document.querySelector('#movie-select');
+    var om = sm.selectedIndex;
+
+    var sp = document.querySelector('#fin-program');
+    var op = sp.selectedIndex;
+
+    var dateOfProgram = allPrograms[op - 1].date;
+
+    allPrograms[op - 1].movies.push(allMovies[om - 1]);
+
+    var nOfMovies = allPrograms[op - 1].movies.length;
+
+    var totalLP = 0;
+    for (var i = 0; i < nOfMovies; i++) {
+        var n = parseInt(allPrograms[op - 1].movies[i].movieLength);
+        totalLP += n;
+    }
+
+
+    var fin = '#program-list li:nth-child(' + op + ')';
+    var final = document.querySelector(fin);
+    final.innerHTML = dateOfProgram + ', ' + nOfMovies + ' movies, duration: ' + totalLP + 'min';
 
 }
