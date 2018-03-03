@@ -1,0 +1,79 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    text-align: center;
+    background-color: wheat;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.exam {
+    color: white;
+}
+
+.exam-passed-text {
+    background-color: rgb(3, 182, 182);
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.exam-failed-text {
+    background-color: rgb(235, 50, 50);
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.exam-passed {
+    margin-top: 10px;
+}
+
+.add {
+    padding: 20px 0 10px 0;
+    background: rgb(208, 230, 231);
+}
+
+.add-subject {
+    margin-right: 12px;
+}
+
+.add-grade {
+    margin-left: 12px;
+}
+
+button {
+    background-color: transparent;
+    color: teal;
+}
+
+h4 {
+    padding-top: 45px;
+}
+
+h1 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 2em;
+}
+
+h3 {
+    font-weight: 300;
+}
+
+.count {
+    float: right;
+    color: white;
+}
+
+.percentage {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    padding: 5px;
+    margin-left: 5px;
+}

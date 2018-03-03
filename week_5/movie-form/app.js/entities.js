@@ -22,16 +22,16 @@ function Program(date) {
 }
 
 Program.prototype.getData = function () {
-    
     var numOfMovies = allMovies.length;
+    return this.date +', '+ numOfMovies+ 'movies'  + ', TBA';
+       
+}
+/*var numOfMovies = allMovies.length;
 
     var allMoviesLength = 0;
     for (var i = 0; i < allMovies.length; i++) {
         allMoviesLength += parseInt(allMovies[i].movieLength);
         var totaLL = document.querySelector('#all-movie-length');
         totaLL.textContent = allMoviesLength;
-    }
-   
-
-    return this.date + " , " + numOfMovies + " movies, " + " duration: " +  allMoviesLength + " min";
-}
+         return this.date + " , " + numOfMovies + " movies, " + " duration: " +  allMoviesLength + " min";
+    }*/

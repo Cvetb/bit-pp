@@ -4,7 +4,10 @@ document.querySelector('#create-movie').addEventListener('click', createMovie);
 function createMovie() {
     var movieTitleInput = document.querySelector('#title').value;
     var movieTitle = movieTitleInput.value;
-    var movieLength = document.querySelector('#length').value;
+
+    var movieLengthInput = document.querySelector('#length').value;
+    var movieLength = movieLengthInput.value;
+
     var movieGenreSelect = document.querySelector('#genre-select');
     var movieGenreIndex = movieGenreSelect.selectedIndex;
     var movieGenre = movieGenreSelect.options[movieGenreIndex].value;
@@ -17,8 +20,8 @@ function createMovie() {
     }
 
 
-    function validation(movieTitleInput, movieLength, movieGenre) {
-        var mLength = parseInt(movieLength);
+    function validation(movieTitleInput, movieLengthInput, movieGenre) {
+        var mLength = parseInt(movieLengthInput);
 
         if (movieTitleInput == '') {
             return error.INSERT_TITLE;
@@ -35,14 +38,17 @@ function createMovie() {
     }
 
 
-    var errorStatus = validation(movieTitleInput, movieLength, movieGenre);
+    var errorStatus = validation(movieTitleInput, movieLengthInput, movieGenre);
     if (errorStatus !== error.OK) {
         document.querySelector('#error').innerHTML = "<p>" + errorStatus + "</p>";
     }
 
 
-    var movie = new Movie(movieTitleInput, movieLength, movieGenre);
+    var movie = new Movie(movieTitleInput, movieLengthInput, movieGenre);
     allMovies.push(movie);
+    movieTitleInput = document.querySelector("#title").value = "";
+    movieLengthInput = document.querySelector("#length").value = null;
+    movieGenre = document.querySelector("#genre-select").value = "-";
 
 
     var listItem = document.createElement('li');
@@ -53,7 +59,7 @@ function createMovie() {
     var movieOption = document.createElement('option');
     var movieOptionContent = document.createTextNode(movie.getInfo());
     movieOption.appendChild(movieOptionContent);
-    var optOfMovies= document.querySelector("#movie-select");
+    var optOfMovies = document.querySelector("#movie-select");
     optOfMovies.appendChild(movieOption);
 
 
@@ -85,5 +91,5 @@ function createProgram() {
     var listOfP1 = document.querySelector("#fin-program");
     optItem1.value = allMovies.length - 1;
     listOfP1.appendChild(optItem1);
-    
+
 }
