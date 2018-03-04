@@ -39,11 +39,11 @@
     background: rgb(208, 230, 231);
 }
 
-.add-subject {
+#add-subject {
     margin-right: 12px;
 }
 
-.add-grade {
+#add-grade {
     margin-left: 12px;
 }
 
@@ -76,4 +76,8 @@ h3 {
     font-size: 11px;
     padding: 5px;
     margin-left: 5px;
+}
+ol {
+    margin-left: 25px;
+    font-size: 1.5em;
 }

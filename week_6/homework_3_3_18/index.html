@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./CSS/main.css">
     <title>Exam</title>
 </head>
 
@@ -20,7 +20,7 @@
                 <span class="exam-title-month">June</span>
             </h1>
 
-            <h3 class="exam-total">Total students: %count%</h3>
+            <h3 class="exam-total">Total students: % count %</h3>
 
             <div class="exam-passed row">
                 <div class="exam-passed-text col-lg-4 offset-lg-4 text-left text-uppercase">passed
@@ -28,7 +28,6 @@
                         <span class="percentage">50%</span>
                     </div>
                 </div>
-
             </div>
 
             <div class="exam-failed row">
@@ -37,7 +36,6 @@
                         <span class="percentage"></span>
                         </divclass>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -46,24 +44,40 @@
     <div class="bottom">
         <div class="add">
             <div class="add-container form-group row">
-                <select class="add-subject form-control col-lg-1 offset-lg-3">
+                <select id="add-subject" class="form-control col-lg-1 offset-lg-3">
+                    <option value="">-</option>
                     <option value="web" selected="">Web</option>
                     <option value="js">JavaScript</option>
                     <option value="spa">SPA</option>
                 </select>
-                <input class="add-student-name form-control col-lg-4" placeholder="Name surname" type="text">
-                <input class="add-grade form-control col-lg-1" min="5" max="10" placeholder="Grade" type="number">
-                <button class="btn btn-default btn-lg col-lg-1">ADD
+                <input id="add-student-name" class="form-control col-lg-4" placeholder="Name surname" type="text">
+
+                <select id="add-grade" class="form-control col-lg-1">
+                    <option value="">-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6" selected="">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+                </select>
+
+                <button id="add" class="btn btn-default btn-lg col-lg-1">ADD
                 </button>
             </div>
         </div>
-
+        <div id="error"></div>
         <div class="container-fluid row">
             <div id="passed" class="col-sm-6 col-md-6 col-lg-6">
                 <h4 class="passed-title text-center text-uppercase">passed</h4>
 
-                <div class="passed-list ">
-
+                <div class="passed-list">
+                    <ol></ol>
                 </div>
             </div>
 
@@ -71,13 +85,18 @@
                 <h4 class="failed-title text-center text-danger text-uppercase">failed</h4>
 
                 <div class="failed-list">
-
-
+                    <ol></ol>
                 </div>
+
             </div>
         </div>
-
     </div>
+
+    <script src="./JS/subject.js"></script>
+    <script src="./JS/student.js"></script>
+    <script src="./JS/exam.js"></script>
+    <script src="./JS/form.js"></script>
+    <script src="./JS/app.js"></script>
 
 </body>
 
