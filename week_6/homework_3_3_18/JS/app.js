@@ -13,5 +13,3 @@ var failedList = document.querySelector('.failed-list');
 
 var add = document.querySelector('#add');
 
-passedList.document.querySelector(".passed-list").innerHTML = "<li>" + +"</li>";
-failedList.document.querySelector(".failed-list").innerHTML = "<li>" + +"</li>";

@@ -1,9 +1,9 @@
-function Subject(name) {
-this.subjectName = name;
+function Subject(subjectName) {
+this.subjectName = subjectName;
 }
 
 Subject.prototype.getSubjectName = function () {
    return  this.subjectName;
 }
 
-var subject = new Subject(name);
+

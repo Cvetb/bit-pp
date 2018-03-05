@@ -7,4 +7,6 @@ Student.prototype.getStudentData = function () {
     return this.name + " " + this.surname;
 }
 
-var student = new Student(name, surname);
+
+
+var allStudents = [];

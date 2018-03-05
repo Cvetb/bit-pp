@@ -5,12 +5,25 @@ function Exam(subject, student, grade) {
 }
 
 Exam.prototype.getExamInfo = function () {
-    return this.subject + ' ' + this.student + ' ' + this.grade;
+    return this.subject.getSubjectName() + ' ' + this.student.getStudentData() + ' ' + this.grade;
 }
 
 Exam.prototype.hasPassed = function () {
     if (this.grade > 5) {
-        return;
+        return true;
     }
-    return;
+    return false;
+}
+
+function createExam(subject, student, grade){
+    
+    (function() {
+        for(var i = 0; i < allStudents.length; i++){
+            if( ){
+                return ;
+            }
+        }
+        allStudents.push(student);  
+        })()
+    return new Exam(subject, student, grade);
 }
