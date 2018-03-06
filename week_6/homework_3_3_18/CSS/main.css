@@ -66,17 +66,24 @@ h3 {
     font-weight: 300;
 }
 
-.count {
+#count,
+#countF {
     float: right;
     color: white;
+    margin-right: 60px;
 }
 
 .percentage {
+    clear: right;
+    float: right;
     background-color: rgba(255, 255, 255, 0.2);
     font-size: 11px;
-    padding: 5px;
-    margin-left: 5px;
+    padding: 5px 10px;
+    margin-left: 2px;
+    color: white;
+    margin-right: 0px;
 }
+
 ol {
     margin-left: 25px;
     font-size: 1.5em;

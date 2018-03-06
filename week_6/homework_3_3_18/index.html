@@ -24,17 +24,17 @@
 
             <div class="exam-passed row">
                 <div class="exam-passed-text col-lg-4 offset-lg-4 text-left text-uppercase">passed
-                    <div id="count">0
-                        <span class="percentage">50%</span>
-                    </div>
+                    <div id="count">0 </div>
                 </div>
             </div>
 
             <div class="exam-failed row">
                 <div class="exam-failed-text col-lg-4 offset-lg-4 text-left text-uppercase">failed
                     <div id="countF">0
-                        <span class="percentage"></span>
-                        </divclass>
+                        
+                        </div>
+                        <div class="percentage">50%</div>
+                        
                     </div>
                 </div>
             </div>
@@ -52,20 +52,7 @@
                 </select>
                 <input id="add-student-name" class="form-control col-lg-4" placeholder="Name surname" type="text">
 
-                <select id="add-grade" class="form-control col-lg-1">
-                    <option value="">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6" selected="">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-
-                </select>
+                <input type="number" class="form-control col-lg-1"id="add-grade" min="5" max="10" placeholder="Grade">
 
                 <button id="add" class="btn btn-default btn-lg col-lg-1">ADD
                 </button>
@@ -92,12 +79,9 @@
         </div>
     </div>
 
-    <script src="./JS/subject.js"></script>
-    <script src="./JS/student.js"></script>
-    <script src="./JS/exam.js"></script>
-    <script src="./JS/form.js"></script>
-    <script src="./JS/app.js"></script>
-
+    <script src="./js/dataModule.js"></script>
+    <script src="./js/UIModule.js"></script>
+    <script src="./js/mainModule.js"></script>
 </body>
 
 </html>
