@@ -1,9 +1,9 @@
-var UIModule = (function(){
+var UIModule = (function () {
 
     var UISelectors = {
-        usernameSelector : "#username", 
-        passwordSelector: "#password", 
-        errorSelector: "#error-block", 
+        usernameSelector: "#username",
+        passwordSelector: "#password",
+        errorSelector: "#error-block",
         buttonSelector: "#login-button"
     }
 
@@ -12,13 +12,13 @@ var UIModule = (function(){
     var errorBlock = document.querySelector(UISelectors.errorSelector);
 
     var status = {
-        OK : "OK", 
-        MISSING_DATA: "Please insert username and/or password", 
+        OK: "OK",
+        MISSING_DATA: "Please insert username and/or password",
         WRONG_DATA: "Please check username and/or password"
     };
-    
+
     //dohvatiti podatke
-    function getFormData(){
+    function getFormData() {
         var formData = {};
         formData.username = usernameInput.value;
         formData.password = passwordInput.value;
@@ -27,8 +27,8 @@ var UIModule = (function(){
     }
 
     //validacija podataka
-    function validateData(username, password){
-        if(username == "" || password == ""){
+    function validateData(username, password) {
+        if (username == "" || password == "") {
             return status.MISSING_DATA;
         }
 
@@ -36,22 +36,22 @@ var UIModule = (function(){
     }
 
     //prikaz greske
-    function setError(message){
+    function setError(message) {
         errorBlock.textContent = message;
     }
 
     //brisanje greske
-    function clearError(){
+    function clearError() {
         errorBlock.textContent = "";
     }
 
     return {
         getFormData: getFormData,
-        validateData: validateData, 
-        setError : setError, 
-        clearError: clearError, 
-        status: status, 
-        UISelectors : UISelectors
+        validateData: validateData,
+        setError: setError,
+        clearError: clearError,
+        status: status,
+        UISelectors: UISelectors
     }
 
 })();

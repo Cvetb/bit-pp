@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Login Form</title>
-    </head>
 
-    <body>
-        <form>
-            <div>
-                <label for='username'>Username:</label>
-                <input type='text' id='username'>
-            </div>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
+    <title>Login Form</title>
+</head>
 
-            <div>
-                <label for='password'>Password:</label>
-                <input type='password' id='password'>
-            </div>
+<body>
+    <form>
+        <div class="form-group ">
+            <label for='username'>Username:</label>
+            <input type='text' class="form-control" id='username'>
+        </div>
 
-            <div>
-                <p id='error-block'></p>
-            </div>
-            
+        <div>
+            <label for='password'>Password:</label>
+            <input type='password' class="form-control" id='password'>
+        </div>
 
-            <div>
-                <input type='button' value='Login' id='login-button'>
-            </div>
+        <div>
+            <p id='error-block'></p>
+        </div>
 
-        </form>
 
-        <script type='text/javascript' src='./js/dataModule.js'></script>
-        <script type='text/javascript' src='./js/UIModule.js'></script>
-        <script type='text/javascript' src='./js/mainModule.js'></script>
-        
-        
-    </body>
+        <div>
+            <button type='button' class="btn btn-success btn-lg text-center" id='login-button'>Login</button>
+        </div>
+
+    </form>
+
+    <script type='text/javascript' src='./js/dataModule.js'></script>
+    <script type='text/javascript' src='./js/UIModule.js'></script>
+    <script type='text/javascript' src='./js/mainModule.js'></script>
+
+
+</body>
 
 </html>

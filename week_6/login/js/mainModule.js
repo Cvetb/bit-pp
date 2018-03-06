@@ -1,4 +1,4 @@
-var mainModule = (function (UIModule, dataModule) {
+var mainModule = (function () {
 
     function addLoginButtonListener() {
 
@@ -28,7 +28,7 @@ var mainModule = (function (UIModule, dataModule) {
     }
 
     return {
-        init: function(){
+        init: function () {
             console.log("lets go...");
             addLoginButtonListener();
         }
@@ -37,4 +37,3 @@ var mainModule = (function (UIModule, dataModule) {
 })(UIModule, dataModule);
 
 mainModule.init();
-
