@@ -19,21 +19,21 @@ var appModule = (function () {
             if (!dataModule.subjects.subjectJS.tookExam(student) && data.subject == 'js') {
                 var exam = dataModule.createExam(dataModule.subjects.subjectJS, student, data.grade);
                 dataModule.subjects.subjectJS.listOfStudents.push(student);
-                console.log(dataModule.subjects.subjectJS.listOfStudents);
+                
 
                 updateStatistics(exam);
             }
             if (!dataModule.subjects.subjectWeb.tookExam(student) && data.subject == 'web') {
                 var exam = dataModule.createExam(dataModule.subjects.subjectWeb, student, data.grade);
                 dataModule.subjects.subjectWeb.listOfStudents.push(student);
-                console.log(dataModule.subjects.subjectWeb.listOfStudents);
+               
 
                 updateStatistics(exam);
             }
             if (!dataModule.subjects.subjectSPA.tookExam(student) && data.subject == 'spa') {
                 var exam = dataModule.createExam(dataModule.subjects.subjectSPA, student, data.grade);
                 dataModule.subjects.subjectSPA.listOfStudents.push(student);
-                console.log(dataModule.subjects.subjectSPA.listOfStudents);
+                
 
                 updateStatistics(exam);
             }
