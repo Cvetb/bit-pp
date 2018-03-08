@@ -3,7 +3,7 @@ document.querySelector('#create-movie').addEventListener('click', createMovie);
 
 function createMovie() {
     let movieTitleInput = document.querySelector('#title').value;
-   const movieTitle = movieTitleInput.value;
+    const movieTitle = movieTitleInput.value;
 
     let movieLengthInput = document.querySelector('#length').value;
     const movieLength = movieLengthInput.value;
@@ -40,7 +40,7 @@ function createMovie() {
 
     const errorStatus = validation(movieTitleInput, movieLengthInput, movieGenre);
     if (errorStatus !== error.OK) {
-        document.querySelector('#error').innerHTML = "<p>" + errorStatus + "</p>";
+        document.querySelector('#error').innerHTML = `<p>${errorStatus}</p>`;
     }
 
 
@@ -63,11 +63,11 @@ function createMovie() {
     optOfMovies.appendChild(movieOption);
 
     let allMoviesLength = 0;
-    for (var i = 0; i < allMovies.length; i++) {
+    for (let i = 0; i < allMovies.length; i++) {
         allMoviesLength += parseInt(allMovies[i].movieLength);
-        var totaLL = document.querySelector('#all-movie-length');
+        const totaLL = document.querySelector('#all-movie-length');
         totaLL.textContent = allMoviesLength;
-        document.querySelector('#all-movie-length').innerHTML = allMoviesLength + " min";
+        document.querySelector('#all-movie-length').innerHTML = `${allMoviesLength} min`;
 
 
     }
@@ -115,14 +115,14 @@ function addMovie() {
     const nOfMovies = allPrograms[op - 1].movies.length;
 
     let totalLP = 0;
-    for (var i = 0; i < nOfMovies; i++) {
-        var n = parseInt(allPrograms[op - 1].movies[i].movieLength);
+    for (let i = 0; i < nOfMovies; i++) {
+        const n = parseInt(allPrograms[op - 1].movies[i].movieLength);
         totalLP += n;
     }
 
 
-    const fin = '#program-list li:nth-child(' + op + ')';
+    const fin = `#program-list li:nth-child(${op})`;
     const final = document.querySelector(fin);
-    final.innerHTML = dateOfProgram + ', ' + nOfMovies + ' movies, duration: ' + totalLP + 'min';
+    final.innerHTML = `${dateOfProgram}, ${nOfMovies} movies, duration: ${totalLP}min`;
 
 }

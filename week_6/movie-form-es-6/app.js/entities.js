@@ -7,14 +7,14 @@ class Movie {
     }
 
     genreAbb() {
-        var firstIndex = 0;
-        var lastIndex = this.movieGenre.length - 1;
-        var abb = this.movieGenre.charAt(firstIndex) + this.movieGenre.charAt(lastIndex);
+        const firstIndex = 0;
+        const lastIndex = this.movieGenre.length - 1;
+        const abb = this.movieGenre.charAt(firstIndex) + this.movieGenre.charAt(lastIndex);
         return abb.toUpperCase();
     }
 
     getInfo() {
-        return this.movieTitle + ', ' + this.movieLength + 'min, ' + this.genreAbb();
+        return `${this.movieTitle}, ${this.movieLength}min, ${this.genreAbb()}`;
     };
 
 
@@ -30,7 +30,7 @@ class Program {
 
 
 getData() {
-    return this.date + ', TBA';
+    return `${this.date}, TBA`;
 
 };
 };
