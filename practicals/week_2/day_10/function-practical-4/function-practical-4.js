@@ -238,4 +238,3 @@ function inserts(e, p, arr) {
 }
 var a = inserts(78, 3, [2, -2, 33, 12, 5, 8]);
 console.log(a);
-
