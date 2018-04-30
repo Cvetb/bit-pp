@@ -6,3 +6,5 @@ The application should be developed with the following use-case scenario in mind
 
 If the provided input is not valid, appropriate error messages should be shown. 
 Both name and surname should be provided and both should start with capitals. The grade should be a valid numerical value from 1 to 10. 
+
+![screenshot-2018-4-30 exam statistics](https://user-images.githubusercontent.com/24230243/39445161-67cc32d0-4cba-11e8-8a5e-90ab910015d8.png)
