@@ -26,9 +26,6 @@ class Program {
         this.movies = [];
     }
 
-
-
-
 getData() {
     return `${this.date}, TBA`;
 

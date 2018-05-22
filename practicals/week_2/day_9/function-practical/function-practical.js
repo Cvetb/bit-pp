@@ -102,7 +102,15 @@ console.log(stars2([5, 3, 7]));
 
 /*task.7
 Write a function that calculates a number of digits of a given number. */
-
+function numOfDigits(n) {
+  var numberString = "" + n
+  counter = 0
+  for (var i = 0; i < numberString.length; i++) {
+      counter += 1;
+  }
+  return counter;
+}
+console.log(numOfDigits(2354));
 
 /*task.8
 Write a function that calculates a number of appearances of a given number in a given array. */ 

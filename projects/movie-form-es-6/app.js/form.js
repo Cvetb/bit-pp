@@ -1,5 +1,9 @@
 const allMovies = [];
+const allPrograms = [];
+
 document.querySelector('#create-movie').addEventListener('click', createMovie);
+document.querySelector("#create-program").addEventListener('click', createProgram);
+document.querySelector("#addmovietop").addEventListener('click', addMovie);
 
 function createMovie() {
     let movieTitleInput = document.querySelector('#title').value;
@@ -18,7 +22,6 @@ function createMovie() {
         INSERT_LENGTH: 'Please check the movie length',
         SELECT_GENRE: 'Please select the movie genre',
     }
-
 
     function validation(movieTitleInput, movieLengthInput, movieGenre) {
         const mLength = parseInt(movieLengthInput);
@@ -45,7 +48,9 @@ function createMovie() {
 
 
     const movie = new Movie(movieTitleInput, movieLengthInput, movieGenre);
+
     allMovies.push(movie);
+
     movieTitleInput = document.querySelector("#title").value = "";
     movieLengthInput = document.querySelector("#length").value = null;
     movieGenre = document.querySelector("#genre-select").value = "-";
@@ -63,6 +68,7 @@ function createMovie() {
     optOfMovies.appendChild(movieOption);
 
     let allMoviesLength = 0;
+
     for (let i = 0; i < allMovies.length; i++) {
         allMoviesLength += parseInt(allMovies[i].movieLength);
         const totaLL = document.querySelector('#all-movie-length');
@@ -72,9 +78,9 @@ function createMovie() {
 
     }
 }
-const allPrograms = [];
 
-document.querySelector("#create-program").addEventListener('click', createProgram);
+
+
 
 function createProgram() {
     var dateProgram = document.querySelector("#date");
@@ -97,7 +103,8 @@ function createProgram() {
     listOfP1.appendChild(optItem1);
 
 }
-document.querySelector("#addmovietop").addEventListener('click', addMovie);
+
+
 
 
 function addMovie() {
